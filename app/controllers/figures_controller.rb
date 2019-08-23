@@ -17,7 +17,7 @@ class FiguresController < ApplicationController
       @figure.titles << Title.find_or_create_by(:name => params[:title][:name])
     end
     if params[:landmark][:name]
-      @figure.landmark << Landmark.find_or_create_by(:name => params[:landmark][:name])
+      @figure.landmarks << Landmark.find_or_create_by(:name => params[:landmark][:name])
     end
     @figure.save
     redirect "/figures/#{@figure.id}"
